@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+
+	<property>
+  		<name>extractor.file</name>
+  		<value>extractors.xml</value>
+	</property>
+	
+    <property>
+		<name>http.agent.name</name>
+		<value>Googlebot</value>
+	</property>
+	
+	<property>
+  		<name>http.robots.agents</name>
+  		<value>Googlebot</value>  
+	</property>
+	
+	<property>
+		<name>parser.skip.truncated</name>
+		<value>false</value>		
+	</property>
+	
+	<property>
+    	<name>db.url.normalizers</name>
+    	<value>false</value>
+    	<description>Normalize urls when updating crawldb</description>
+	</property>
+
+	<property>
+    	<name>db.url.filters</name>
+    	<value>true</value>
+    	<description>Filter urls when updating crawldb</description>
+	</property>
+
+	<property>
+  		<name>http.content.limit</name>
+  		<value>-1</value>
+  		<description>The length limit for downloaded content using the http://
+  			protocol, in bytes. If this value is nonnegative (>=0), content longer
+  			than it will be truncated; otherwise, no truncation at all. Do not
+  			confuse this setting with the file.content.limit setting.
+  		</description>
+	</property>
+
+	<property>
+  		<name>db.update.additions.allowed</name>
+  		<value>true</value>
+  		<description>If true, updatedb will add newly discovered URLs, if false
+  		only already existing URLs in the CrawlDb will be updated and no new
+  		URLs will be added.
+  		</description>
+	</property>
+
+	<property>
+  		<name>db.fetch.interval.default</name>
+  		<value>31536000</value>
+  		<description>The default number of seconds between re-fetches of a page (30 days).
+  		</description>
+	</property>
+	
+	<property>
+  		<name>db.fetch.schedule.class</name>
+  		<value>org.apache.nutch.crawl.AdaptiveFetchSchedule</value>
+  		<description>The implementation of fetch schedule. DefaultFetchSchedule simply
+  		adds the original fetchInterval to the last fetch time, regardless of
+  		page changes.</description>
+	</property>
+	
+	<property>
+		<name>plugin.folders</name>
+		<value>/ttxvn-resources/nutch/build/plugins</value>
+	</property>
+	
+	<!-- <property>
+		<name>plugin.folders</name>
+		<value>D:\nutch\build\plugins</value>
+	</property> -->
+	
+	<property>
+		<name>plugin.includes</name>		
+		<value>protocol-httpclient|urlfilter-regex|parse-(html|tika)|extractor|index-(basic|anchor)|indexer-solr|scoring-opic|urlnormalizer-(pass|regex|basic)|myPlugin</value> 
+	</property>
+	
+	<property>
+  		<name>db.injector.update</name>
+  		<value>true</value>
+  		<description>If true existing records in the CrawlDB will be updated with
+  		injected records. Old meta data is preserved. The db.injector.overwrite
+  		parameter has precedence.
+  		</description>
+	</property>
+
+	<property>
+  		<name>db.injector.overwrite</name>
+  		<value>true</value>
+  		<description>Whether existing records in the CrawlDB will be overwritten
+  		by injected records.
+  		</description>
+	</property>
+	
+	<property>
+		<name>fetcher.threads.per.queue</name>
+   		<value>50</value>
+   		<description></description>
+	</property>
+	
+	<property>
+		<name>fetcher.threads.fetch</name>
+		<value>50</value>
+		<description></description>
+	</property>
+
+	<property>
+  		<name>http.timeout</name>
+  		<value>30000</value>
+  		<description>The default network timeout, in milliseconds.</description>
+	</property>
+	
+	<property>
+  		<name>http.max.delays</name>
+  		<value>60000</value>  
+	</property>
+	
+	<!-- <property>
+        <name>fs.file.impl</name>
+        <value>com.conga.services.hadoop.patch.HADOOP_7682.WinLocalFileSystem</value>
+        <description>Enables patch for issue HADOOP-7682 on Windows</description>
+    </property> -->
+    
+	<property>
+  		<name>db.fetch.retry.max</name>
+  		<value>30</value>
+  		<description>The maximum number of times a url that has encountered
+  			recoverable errors is generated for fetch.</description>
+	</property>
+</configuration>

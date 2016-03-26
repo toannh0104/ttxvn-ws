@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	
+<xpathFilterConfiguration>	
+	<xpathIndexerProperties pageUrlFilterRegex="^http://([a-z0-9]*\.)*/" pageContentFilterXPath="" pageContentFilterRegex="" trimPageContentFilterXPathData="true" concatPageContentFilterXPathData="true" concatPageContentFilterXPathDataDelimiter=" ">
+	
+		
+		<field name="title" xPath="//some_xpath" type="STRING" concat="false" concatDelimiter=" " trimXPathData="false"/>
+		<field name="date" xPath="//some_xpath" type="DATE" dateFormat="dd.MM.yyyy" />
+	</xpathIndexerProperties>
+	
+</xpathFilterConfiguration>
